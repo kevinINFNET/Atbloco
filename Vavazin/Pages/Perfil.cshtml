@@ -1,0 +1,134 @@
+﻿@page
+@model Vavazin.Pages.PerfilModel
+
+<style>
+    .perfil-container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .perfil-avatar {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+        .perfil-avatar img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #007bff;
+        }
+
+        .perfil-avatar input[type="file"] {
+            display: none;
+        }
+
+        .perfil-avatar label {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+    .perfil-info {
+        margin-top: 20px;
+    }
+
+        .perfil-info h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .perfil-info p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 10px 0;
+        }
+
+    .btn-back {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+        .btn-back:hover {
+            background-color: #0056b3;
+        }
+
+    .transacoes {
+        margin-top: 30px;
+        text-align: left;
+    }
+
+        .transacoes h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+    .transacao {
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+    }
+</style>
+
+<div class="perfil-container">
+    <div class="perfil-avatar">
+        <img src="https://via.placeholder.com/150" alt="Avatar do Usuário" id="avatar-preview">
+        <label for="avatar-upload">✏️</label>
+        <input type="file" id="avatar-upload" accept="image/*" onchange="previewAvatar()">
+    </div>
+
+    <div class="perfil-info">
+        <h2>Perfil do Usuário</h2>
+        <p><strong>Nome:</strong> @Model.Nome</p>
+        <p><strong>Email:</strong> @Model.Email</p>
+    </div>
+
+    <div class="transacoes">
+        <h3>Histórico de Transações</h3>
+        @foreach (var transacao in Model.HistoricoTransacoes)
+        {
+            <div class="transacao">
+                <p><strong>Produto:</strong> @transacao.Produto</p>
+                <p><strong>Valor:</strong> R$ @transacao.Valor</p>
+                <p><strong>Data:</strong> @transacao.Data.ToShortDateString()</p>
+            </div>
+        }
+    </div>
+
+    <a href="/" class="btn-back">Voltar à página inicial</a>
+</div>
+
+<script>
+    function previewAvatar() {
+        const file = document.getElementById("avatar-upload").files[0];
+        const reader = new FileReader();
+
+        reader.onloadend = function () {
+            document.getElementById("avatar-preview").src = reader.result;
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+</script>

@@ -1,0 +1,32 @@
+﻿@page
+@model Vavazin.Pages.TransacaoFinanceiraModel
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="text-center">Transação Financeira</h2>
+
+        <form method="post">
+            <div class="form-group mb-3">
+                <label for="nome" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="nome" name="nome" required placeholder="Digite seu nome completo">
+            </div>
+            <div class="form-group mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required placeholder="Digite seu email">
+            </div>
+            <div class="form-group mb-3">
+                <label for="cartao" class="form-label">Número do Cartão</label>
+                <input type="text" class="form-control" id="cartao" name="cartao" required placeholder="1234 5678 9012 3456">
+            </div>
+            <div class="form-group mb-3">
+                <label for="dataVencimento" class="form-label">Data de Vencimento</label>
+                <input type="text" class="form-control" id="dataVencimento" name="dataVencimento" required placeholder="MM/AAAA">
+            </div>
+            <div class="form-group mb-3">
+                <label for="codigoSeguranca" class="form-label">Código de Segurança</label>
+                <input type="text" class="form-control" id="codigoSeguranca" name="codigoSeguranca" required placeholder="CVV">
+            </div>
+            <button type="submit" class="btn btn-success w-100">Confirmar Pagamento</button>
+        </form>
+    </div>
+</div>

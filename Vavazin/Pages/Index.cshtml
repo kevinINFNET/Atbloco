@@ -1,0 +1,90 @@
+﻿@page
+@model Vavazin.Pages.IndexModel
+@{
+    ViewData["Title"] = "StoreVAVA - Bem-vindo";
+}
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding-top: 200px;
+    }
+
+        .content h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #FFFFFF; 
+        }
+
+        .content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #FFFFFF; 
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        font-size: 1.25rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .image-gallery {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+        .image-gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+</style>
+
+<video class="video-background" autoplay muted loop>
+    <source src="https://videos.pexels.com/video-files/8683819/8683819-uhd_2732_1440_25fps.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<div class="content">
+    <h1>Bem-vindo à StoreVAVA</h1>
+    <p>As melhores contas e serviços de Valorant: elojob, coaching e muito mais.</p>
+    <a class="btn-primary" href="/ValorantPage">Conheça nossos serviços</a>
+</div>
+
+<div class="image-gallery">
+    <img src="https://as2.ftcdn.net/v2/jpg/05/04/01/13/1000_F_504011379_0vvKnPYIGkCjEPQ7aWHtnB7XKIGqwzZO.jpg" alt="Imagem 1">
+    <img src="https://as1.ftcdn.net/v2/jpg/08/09/76/20/1000_F_809762011_zxmqyO3jbXo30LuE0YOoDc2NMp6FqaGm.jpg" alt="Imagem 2">
+    <img src="https://as2.ftcdn.net/v2/jpg/07/06/91/73/1000_F_706917347_XlimYaKI1Jyw2GgzR7gJNwQEFRr7v34I.jpg" alt="Imagem 3">
+</div>

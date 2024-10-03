@@ -1,0 +1,14 @@
+﻿@page
+@model Vavazin.Pages.DetalhesModel
+
+<h2>Detalhes do Anúncio</h2>
+
+<div class="card">
+    <img src="@Model.ImagemUrl" class="card-img-top" alt="Detalhe do Anúncio">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Titulo</h5>
+        <p class="card-text">@Model.Descricao</p>
+        <p class="card-text"><strong>Preço:</strong> @Model.Preco</p>
+        <a href="/valorant" class="btn btn-secondary">Voltar à Página de Anúncios</a>
+    </div>
+</div>

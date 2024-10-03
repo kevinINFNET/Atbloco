@@ -1,0 +1,28 @@
+﻿@page "{id:int}"
+@model Vavazin.Pages.DeleteModel
+@{
+    ViewData["Title"] = "Excluir Anúncio";
+}
+
+<h2>Excluir Anúncio</h2>
+
+<div>
+    <h4>Anúncio</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4">Título</dt>
+        <dd class="col-sm-8">@Model.Anuncio.Titulo</dd>
+        <dt class="col-sm-4">Descrição</dt>
+        <dd class="col-sm-8">@Model.Anuncio.Descricao</dd>
+        <dt class="col-sm-4">Imagem</dt>
+        <dd class="col-sm-8">
+            <img src="@Model.Anuncio.ImagemUrl" alt="Imagem do Anúncio" style="width: 100px; height: auto;" />
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Anuncio.Id" />
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a asp-page="./ValorantPage" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

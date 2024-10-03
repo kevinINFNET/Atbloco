@@ -1,0 +1,29 @@
+﻿@page "{id:int}"
+@model Vavazin.Pages.DetalhesAnuncioModel
+
+<h2>Detalhes do Anúncio</h2>
+
+<style>
+    .detalhe-img {
+        width: 100%; 
+        height: auto; 
+        max-height: 400px; 
+        object-fit: cover; 
+    }
+</style>
+
+@if (Model.Anuncio != null) 
+{
+    <div>
+        <img src="@Model.Anuncio.ImagemUrl" class="detalhe-img" alt="Imagem do Anúncio">
+        <h5>@Model.Anuncio.Titulo</h5>
+        <p>@Model.Anuncio.Descricao</p>
+        <strong>Preço:</strong> @Model.Anuncio
+        <a href="/TransacaoFinanceira" class="btn btn-success">Comprar</a>
+        <a href="/ValorantPage" class="btn btn-secondary">Voltar a página de anúncios</a>
+    </div>
+}
+else
+{
+    <p>Anúncio não encontrado.</p>
+}
